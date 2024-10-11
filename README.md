@@ -1,5 +1,5 @@
 # OnionATS
-
+Suột được "Mượn" từ trang này https://www.c-sharpcorner.com/article/onion-architecture-in-asp-net-core-mvc/
 # Cách chạy code
 ## Yêu cầu phần mềm
 ### SQL Server 2019+
