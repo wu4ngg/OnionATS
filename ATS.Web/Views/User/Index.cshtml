@@ -1,0 +1,47 @@
+﻿@model IEnumerable<UserViewModel>
+@using ATS.Web.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+    <h3 class="panel-heading panel-head">
+        Danh sách người dùng
+    </h3>
+    <div class="button-group">
+        <a class="btn btn-primary">
+            <i class="glyphicon glyphicon-plus"></i>  Thêm người dùng
+        </a>
+    </div>
+    <div class="top-buffer"></div>
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    <td>
+                        <a id="editUserModal" data-toggle="modal" asp-action="EditUser" asp-route-id="@item.Id" data-target="#modal-action-user"
+                           class="btn btn-info">
+                            <i class="glyphicon glyphicon-pencil"></i>  Edit
+                        </a>
+                        <a id="deleteUserModal" data-toggle="modal" asp-action="DeleteUser" asp-route-id="@item.Id" data-target="#modal-action-user" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>  Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
