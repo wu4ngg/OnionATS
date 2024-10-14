@@ -9,5 +9,6 @@ namespace ATS.Service
         void InsertUser(User user);
         void UpdateUser(User user);
         void DeleteUser(long id);
+        long Login(string username, string password);
     }
 }
