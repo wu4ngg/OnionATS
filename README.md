@@ -18,7 +18,9 @@ git clone https://github.com/wu4ngg/OnionATS
 ### Mở dự án
 ![ảnh](https://github.com/user-attachments/assets/f2127727-a84a-436a-9a68-6538c1c3cf02)
 ### Chuẩn bị database
-Ở Visual Studio, vào Tools > NuGet Package Manager > Package Manager Console
+Ở Visual Studio, vào Tools > NuGet Package Manager > Package Manager Console\
+Chọn ATS.Repo\
+![ảnh](https://github.com/user-attachments/assets/734bc9d8-12c9-4df7-90b8-e1b4cfbda6bb)\
 Gõ lệnh
 ```
 Update-Database
