@@ -1,0 +1,26 @@
+﻿body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container-fluid {
+    margin-top: 60px; /* Adjust according to navbar height */
+}
+
+.sidebar {
+    height: calc(100vh - 60px); /* Adjust according to navbar height */
+    position: fixed;
+    top: 60px; /* Adjust according to navbar height */
+}
+
+.main-content {
+    margin-left: 200px; /* Adjust according to sidebar width */
+    padding: 20px;
+    flex-grow: 1;
+}
