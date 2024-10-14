@@ -12,11 +12,16 @@ namespace ATS.Service
     {
         private IRepository<User> userRepository;
         private IRepository<Profile> profileRepository;
-
-        public UserService(IRepository<User> userRepository, IRepository<Profile> profileRepository)
+        private IAuthRepository authRepository;
+        public UserService(IRepository<User> userRepository, IRepository<Profile> profileRepository, IAuthRepository authRepository)
         {
             this.userRepository = userRepository;
             this.profileRepository = profileRepository;
+            this.authRepository = authRepository;
+        }
+        public long Login(string username, string password)
+        {
+            return authRepository.Login(username, password);
         }
         public IEnumerable<User> GetUsers()
         {

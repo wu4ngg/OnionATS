@@ -10,6 +10,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 #region Service Injected
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IAuthRepository), typeof(AuthRepository));
+
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IProfileService, ProfileService>();
 #endregion
@@ -32,6 +34,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.MapControllerRoute(name: "user", pattern: "{controller=User}/{action=Index}");
 app.Run();
